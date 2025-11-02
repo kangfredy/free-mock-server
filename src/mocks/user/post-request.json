@@ -1,0 +1,17 @@
+{
+    "headers": {
+      "content-type": "application/json"
+    },
+    "body": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone":{"countryCode":"+91","number":"1234567890"},
+        "address":{
+            "street":"123 Main St",
+            "city":"Anytown",
+            "state":"CA",
+            "zip":"12345"
+        },
+        "profilePicture":"https://example.com/profile.jpg"
+    }
+  }

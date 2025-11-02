@@ -1,0 +1,19 @@
+{
+    "success": true,
+    "message": "User created successfully",	
+    "data": {
+        "id": 1,	
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone":{"countryCode":"+91","number":"1234567890"},
+        "address":{
+            "street":"123 Main St",
+            "city":"Anytown",
+            "state":"CA",
+            "zip":"12345"
+        },
+        "profilePicture":"https://example.com/profile.jpg",
+        "createdAt": "2021-01-01T00:00:00.000Z",
+        "updatedAt": "2021-01-01T00:00:00.000Z"
+    }
+  }

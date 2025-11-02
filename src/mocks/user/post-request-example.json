@@ -1,0 +1,72 @@
+{
+  "headers": {
+    "content-type": "application/json",
+    "authorization": {
+      "value": "Bearer token",
+      "isNullable": false
+    }
+  },
+  "body": {
+    "name": {
+      "value": "string",
+      "isNullable": false
+    },
+    "email": {
+      "value": "string",
+      "isNullable": false
+    },
+    "age": {
+      "value": "number",
+      "isNullable": true
+    },
+    "status": {
+      "value": "string",
+      "typeData": ["active", "inactive", "pending"],
+      "isNullable": false
+    },
+    "phone": {
+      "value": {
+        "countryCode": {
+          "value": "string",
+          "isNullable": false
+        },
+        "number": {
+          "value": "string",
+          "isNullable": false
+        }
+      },
+      "isNullable": true
+    },
+    "address": {
+      "value": {
+        "street": {
+          "value": "string",
+          "isNullable": false
+        },
+        "city": {
+          "value": "string",
+          "isNullable": false
+        },
+        "state": {
+          "value": "string",
+          "typeData": ["CA", "NY", "TX", "FL"],
+          "isNullable": false
+        },
+        "zip": {
+          "value": "string",
+          "isNullable": false
+        }
+      },
+      "isNullable": false
+    },
+    "isActive": {
+      "value": "boolean",
+      "isNullable": false
+    },
+    "tags": {
+      "value": "array",
+      "isNullable": true
+    }
+  }
+}
+

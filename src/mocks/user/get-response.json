@@ -1,0 +1,55 @@
+{
+    "success": true,
+    "data": [
+      {
+        "id": 1,
+        "name": "User One",
+        "email": "user1@example.com"
+      },
+      {
+        "id": 2,
+        "name": "User Two",
+        "email": "user2@example.com"
+      },
+      {
+        "id": 3,
+        "name": "User Three",
+        "email": "user3@example.com"
+      },
+      {
+        "id": 4,
+        "name": "User Four",
+        "email": "user4@example.com"
+      },
+      {
+        "id": 5,
+        "name": "User Five",
+        "email": "user5@example.com"
+      },
+      {
+        "id": 6,
+        "name": "User Six",
+        "email": "user6@example.com"
+      },
+      {
+        "id": 7,
+        "name": "User Seven",
+        "email": "user7@example.com"
+      },
+      {
+        "id": 8,
+        "name": "User Eight",
+        "email": "user8@example.com"
+      },
+      {
+        "id": 9,
+        "name": "User Nine",
+        "email": "user9@example.com"
+      },
+      {
+        "id": 10,
+        "name": "User Ten",
+        "email": "user10@example.com"
+      }
+    ]
+  }
