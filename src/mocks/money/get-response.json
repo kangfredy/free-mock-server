@@ -1,0 +1,10 @@
+{
+    "success": true,
+    "data": [
+      {
+        "id": 1,
+        "name": "Money One",
+        "email": "money1@example.com"
+      }
+    ]
+  }

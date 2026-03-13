@@ -14,8 +14,10 @@ import helmet from 'helmet';
 import compression from 'compression';
 import morgan from 'morgan';
 import * as path from 'path';
-import { scanRoutes, createRouteHandler } from './utils/routeLoader';
+import swaggerUi from 'swagger-ui-express';
+import { scanRoutes, createRouteHandler, RouteConfig } from './utils/routeLoader';
 import { watchDirectory } from './utils/fileWatcher';
+import { buildOpenApiSpec } from './docs/openapi';
 
 const app: Express = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +29,22 @@ app.use(compression());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Swagger UI & OpenAPI docs (always read from /openapi.json so it stays dynamic)
+app.get('/openapi.json', (req, res) => {
+  const spec = buildOpenApiSpec(currentRoutes, API_BASE_PATH);
+  res.json(spec);
+});
+
+app.use(
+  '/docs',
+  swaggerUi.serve,
+  swaggerUi.setup(undefined, {
+    swaggerOptions: {
+      url: '/openapi.json',
+    },
+  })
+);
 
 // Base route for API
 const API_BASE_PATH = process.env.API_BASE_PATH || '';
@@ -41,6 +59,7 @@ console.log('  MOCK_DATA_DIR:', process.env.MOCK_DATA_DIR || 'not set (using def
 // Create a router for dynamic routes
 let routesRouter = Router();
 let registeredRoutes: string[] = [];
+let currentRoutes: RouteConfig[] = [];
 
 // Function to reload all routes
 function reloadRoutes() {
@@ -84,6 +103,7 @@ function reloadRoutes() {
     // Replace old router with new one
     routesRouter = newRouter;
     registeredRoutes = newRegisteredRoutes;
+    currentRoutes = routes;
 
     console.log(`✅ Reloaded ${routes.length} route(s):`);
     registeredRoutes.forEach(route => {

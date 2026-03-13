@@ -80,7 +80,7 @@ curl -X POST http://localhost:3000/user \
 
 ### Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file in the project root (you can copy from `.env.example`):
 
 ```env
 # Server port (default: 3000)
@@ -99,6 +99,12 @@ ENABLE_FILE_WATCHER=true
 
 # Node environment
 NODE_ENV=development
+```
+
+You can use the provided `.env.example` as a template:
+
+```bash
+cp .env.example .env
 ```
 
 ### Package Scripts
@@ -636,6 +642,13 @@ mocks/
 **Result:** `GET /users/:userId/orders`
 
 ## API Reference
+
+### API Documentation
+
+- Swagger UI: `GET /docs`
+- OpenAPI JSON: `GET /openapi.json`
+
+The Swagger UI documents example endpoints (such as `/health`, `/users`, and `/products/{id}`) and shows request/response examples based on the folder structure examples in this README. Your actual routes are still fully driven by the `mocks` directory structure.
 
 ### Health Check
 

@@ -3,7 +3,7 @@ import * as path from 'path';
 import { Request, Response, NextFunction } from 'express';
 import { validateRequestBody, validateRequestHeaders, validateRequestQuery } from './validation';
 
-interface RouteConfig {
+export interface RouteConfig {
   method: string;
   path: string;
   requestSchema?: any;
